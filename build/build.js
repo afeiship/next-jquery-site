@@ -10,7 +10,7 @@
   });
 
   gulp.task('build', ['clean'], function() {
-    gulp.start(['scripts','bower','styles','html']);
+    gulp.start(['scripts','bower','styles','images','html']);
   });
 
 

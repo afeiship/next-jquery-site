@@ -1,9 +1,17 @@
 @import 'bower_components/web-sass-reset/dist/web-sass-reset.scss';
 
-
 // your code...
 
-body{
+body {
   background-color: #eee;
-  color:#f00
+  color: #f00;
+
+  button {
+    display: block;
+    width:90%;
+    margin: 0 auto;
+    background: #f60;
+    color:#fff;
+    padding:20px;
+  }
 }

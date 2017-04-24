@@ -13,18 +13,22 @@
 
   var browserSync = require('browser-sync');
   // Static server
-  gulp.task('serve', ['watch'], function () {
+  gulp.task('serve', ['build'], function () {
     browserSync.init({
       server: {
         baseDir: path.join(config.path.dist),
         routes: {
           '/bower_components': path.join(config.path.root, 'bower_components'),
+          '/styles': path.join(config.path.root, 'src/styles'),
+          '/scripts': path.join(config.path.root, 'src/scripts'),
+          '/images': path.join(config.path.root, 'src/images')
         }
       }
     });
 
 
-    gulp.watch(['src/**']).on("change", function () {
+    gulp.watch(['src/**'],['watch']).on("change", function () {
+      console.log('change...');
       browserSync.reload();
     });
   });
