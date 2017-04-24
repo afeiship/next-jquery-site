@@ -12,7 +12,9 @@
   gulp.task('styles',function() {
     return gulp.src('src/styles/*.scss')
       .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
-      .pipe(gulp.dest('src/styles'));
+      .pipe(gulp.dest('src/styles'))
+      .pipe($.replace('../../bower_components','../bower_components'))
+      .pipe(gulp.dest('dist/styles'));
   });
 
   //watch

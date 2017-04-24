@@ -9,8 +9,10 @@
     pattern: ['gulp-*', 'gulp.*', 'del']
   });
 
-  gulp.task('build', ['clean'], function() {
-    gulp.start(['scripts','bower','styles','images','html','favicon']);
+
+  gulp.task('favicon', function () {
+    return gulp.src('src/favicon.ico')
+      .pipe(gulp.dest('dist'));
   });
 
 
